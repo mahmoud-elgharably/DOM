@@ -67,7 +67,6 @@ document.addEventListener('scroll', function (event) {
 
 
 document.getElementById('mblMenu').addEventListener('click', () => {
-
     let x = document.querySelector('.navbar__menu');
     //console.log(x.style.display);
     if (x.style.display !== "block") {
@@ -75,8 +74,6 @@ document.getElementById('mblMenu').addEventListener('click', () => {
     } else {
       x.style.display = "none";
     }
-
-
 
     //if (x.style.display !== "none") {
     //  x.style.display = "none";

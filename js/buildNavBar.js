@@ -55,7 +55,21 @@ function buildNavBar(type1, type2, type3, useFragment) {
 
 function handleItemLinkClickEvent(event) {
     event.preventDefault();
-    const selectedSection = document.getElementById(event.path[0].getAttribute('href').replace('#', '')); // .href | getAttribute('href')
-    //const selectedSection = document.getElementById(event.path[0].getAttribute('href').substring(1));
-    selectedSection.scrollIntoView({behavior: "smooth", block: "center"});
+    
+    const selectedSection = document.getElementById(event.target.getAttribute('href').replace('#', '')); // .href | getAttribute('href')
+    //const selectedSection = document.getElementById(event.target.getAttribute('href').substring(1));    
+    
+    //selectedSection.scrollIntoView({behavior: "smooth", block: "center"});
+    selectedSection.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+
+    //console.log(selectedSection.id);
+    //const one = selectedSection.getBoundingClientRect().top;
+    //window.scrollTo({ top: one, behavior: "smooth" });
+    //window.scroll({ top: one, behavior: "smooth" });
+
+    // Close humpurger menu if it was opened
+    let x = document.querySelector('.navbar__menu');
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    }
 }
